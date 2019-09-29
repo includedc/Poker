@@ -10,34 +10,34 @@ public class Poker2 {
 
 	public static void main(String[] args) {
 		/**
-		 * * A:°¸ÀıÑİÊ¾   ¶·µØÖ÷plus
-		 * Ä£Äâ¶·µØÖ÷Ï´ÅÆºÍ·¢ÅÆ£¬²¢ÅÅĞò
+		 * * A:æ¡ˆä¾‹æ¼”ç¤º   æ–—åœ°ä¸»plus
+		 * æ¨¡æ‹Ÿæ–—åœ°ä¸»æ´—ç‰Œå’Œå‘ç‰Œï¼Œå¹¶æ’åº
 		 * 
-		 * ·ÖÎö:
-		 * 1,ÂòÒ»¸±ÆË¿Ë,ÆäÊµ¾ÍÊÇ×Ô¼º´´½¨Ò»¸ö¼¯ºÏ¶ÔÏó,½«ÆË¿ËÅÆ´æ´¢½øÈ¥
-		 * 2,Ï´ÅÆ
-		 * 3,·¢ÅÆ
-		 * 4,¿´ÅÆ
+		 * åˆ†æ:
+		 * 1,ä¹°ä¸€å‰¯æ‰‘å…‹,å…¶å®å°±æ˜¯è‡ªå·±åˆ›å»ºä¸€ä¸ªé›†åˆå¯¹è±¡,å°†æ‰‘å…‹ç‰Œå­˜å‚¨è¿›å»
+		 * 2,æ´—ç‰Œ
+		 * 3,å‘ç‰Œ
+		 * 4,çœ‹ç‰Œ
 		 */
 		String[] num= {"3","4","5","6","7","8","9","10","J","Q","K","A","2"};
-		String[] color= {"·½Æ¬","ºìÌÒ","ºÚÌÒ","Ã·»¨"};
+		String[] color= {"æ–¹ç‰‡","çº¢æ¡ƒ","é»‘æ¡ƒ","æ¢…èŠ±"};
 		HashMap<Integer, String> hm=new HashMap<>();
 		ArrayList<Integer> list=new ArrayList<>();
 		int index=0;
 		for(String s1:num) {							
 			for(String s2:color) {
-				hm.put(index, s2.concat(s1));						//°ÑÅÆÁ¬½ÓÆğÀ´²¢Ìí¼Óµ½hm¼¯ºÏ£¬indexÊÇË÷Òı
-				list.add(index);									//°ÑË÷ÒıÌí¼Óµ½list½áºÏÖĞ
+				hm.put(index, s2.concat(s1));						//æŠŠç‰Œè¿æ¥èµ·æ¥å¹¶æ·»åŠ åˆ°hmé›†åˆï¼Œindexæ˜¯ç´¢å¼•
+				list.add(index);							//æŠŠç´¢å¼•æ·»åŠ åˆ°listç»“åˆä¸­
 				index++;
 			}
 		}
-		hm.put(index, "Ğ¡Íõ");										//Ìí¼Ó´óĞ¡Íõ
+		hm.put(index, "å°ç‹");								      //æ·»åŠ å¤§å°ç‹
 		list.add(index);
 		index++;
-		hm.put(index, "´óÍõ");
+		hm.put(index, "å¤§ç‹");
 		list.add(index);
-		Collections.shuffle(list);									//Ï´ÅÆ--Ë÷Òı´òÂÒ
-		TreeSet<Integer> p1=new TreeSet<>();						//·¢ÅÆ£¬½¨Á¢Íæ¼Ò¼¯ºÏ½ÓÊÕ
+		Collections.shuffle(list);							//æ´—ç‰Œ--ç´¢å¼•æ‰“ä¹±
+		TreeSet<Integer> p1=new TreeSet<>();						//å‘ç‰Œï¼Œå»ºç«‹ç©å®¶é›†åˆæ¥æ”¶
 		TreeSet<Integer> p2=new TreeSet<>();
 		TreeSet<Integer> p3=new TreeSet<>();
 		TreeSet<Integer> dipai=new TreeSet<>();
@@ -52,14 +52,14 @@ public class Poker2 {
 				p3.add(list.get(i));
 			}
 		}
-		//¿´ÅÆ
-		lookPoker(hm,p1,"Íæ¼Ò1");
-		lookPoker(hm,p2,"Íæ¼Ò2");
-		lookPoker(hm,p3,"Íæ¼Ò3");
-		lookPoker(hm,dipai,"µ×ÅÆ");
+		//çœ‹ç‰Œ
+		lookPoker(hm,p1,"ç©å®¶1");
+		lookPoker(hm,p2,"ç©å®¶2");
+		lookPoker(hm,p3,"ç©å®¶3");
+		lookPoker(hm,dipai,"åº•ç‰Œ");
 	}
 public static void lookPoker(HashMap<Integer, String> hm,TreeSet<Integer> ts,String name) {
-	System.out.print(name+"µÄÅÆÊÇ:");
+	System.out.print(name+"çš„ç‰Œæ˜¯:");
 	for(Integer i:ts) {
 		System.out.print(hm.get(i)+",");
 	}
